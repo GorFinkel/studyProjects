@@ -11,7 +11,7 @@ https://www.theodinproject.com/lessons/node-path-javascript-library
 **rockPaper**- Rock Paper Scissors game via console
 https://www.theodinproject.com/lessons/foundations-rock-paper-scissors
 
-**rockInHebrew=evem **- Hebrew version of Rock Paper Scissors game via console
+**rockInHebrew** - Hebrew version of Rock Paper Scissors game via console
 
 
 **tic** - Tic Tac Toe game you can play in your browser!
