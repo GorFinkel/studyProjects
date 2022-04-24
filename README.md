@@ -5,6 +5,7 @@ library3 -  small Library app (no design yet)
 https://www.theodinproject.com/lessons/node-path-javascript-library
 
 multiColor - generates grid boxes and changes color with mouseover
+paint - based on multiColor - plain paint function
 
 rockPaper- Rock Paper Scissors game via console
 https://www.theodinproject.com/lessons/foundations-rock-paper-scissors
