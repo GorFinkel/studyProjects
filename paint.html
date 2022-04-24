@@ -1,0 +1,52 @@
+<html>
+  <body>
+      <style>
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(30, 1fr);
+  grid-auto-rows: 20px;
+      }
+      .grid-item {
+        padding: 2px;
+  text-align: center;
+
+      }
+
+      </style>
+      
+  <div class="grid-container">
+
+</div>
+  
+
+  <script>
+     
+n=1000;
+      for (let a=1; a<n; a++) {
+let x = document.createElement("div")
+x.className = "grid-item"
+x.textContent = ` `
+document.querySelector(".grid-container").appendChild(x);
+
+}
+
+      const grid = document.querySelectorAll(".grid-item");
+
+
+
+      grid.forEach((gridd)=>{
+     gridd.addEventListener("mouseover", function () {
+
+   
+      
+            gridd.style.backgroundColor =  "#123ABC"; //
+
+            })
+    })
+
+           
+        
+
+      </script>
+  </body>
+</html>
