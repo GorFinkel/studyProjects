@@ -1,0 +1,146 @@
+<html>
+<body>
+    <style>
+  
+
+          }
+        .lib {
+            display: grid;
+            grid-template-columns: 1fr 60px;
+
+       
+
+
+          }
+          .book-cell {
+            display: grid;
+            grid-template-columns: 1fr 60px;
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            font-size: 5vh;
+      text-align: center;
+    
+          }
+    
+          </style>
+    <label>Book Title:      <br>
+    <input type="form" class = "book title"><br>
+    <label>Book Author:     <br>
+    <input type="form" class = "book author"><br>
+    <label>Amount of Pages: <br>
+    <input type="form" class = "book pages"><br>
+    <label>Read it yet?     <br>
+    <input type="form" class = "book read"><br>
+    <input type = "button" class ="bu" value="Submit"><br>
+
+<div class="lib">  
+</div>
+    <script>
+
+function Book (title, author, pages,read){
+this.title = title
+this.author=author
+this.pages=pages
+this.read=read  
+
+}
+let myLibrary = [];
+let newBook;
+let title = document.querySelector(".title")
+let author = document.querySelector(".author")
+let pages = document.querySelector(".pages")
+let read = document.querySelector(".read")
+function AddNewBook() {
+    document.querySelector(".bu").addEventListener("click", ()=> {
+if (title.value.length) {
+    newBook = new Book(title.value, author.value, pages.value,read.value); 
+    myLibrary.push(newBook); 
+    setData()
+    deleteOnScreen ()
+    postOnScreen ()
+    deleteValue();
+        return;
+    }
+    alert('fine');
+})
+}
+AddNewBook()
+
+function deleteValue() {
+title.value = ""
+ author.value = ""
+ pages.value = ""
+read.value = ""
+}
+
+let book1= new Book ("Voina i Mir", "Tolstoi", "2000", " not read")
+let book2= new Book ("Zolotaja Ribka", "Pushkin", "9", " read")
+let book3= new Book ("Aolotaja Ribka", "ashkin", "9", " read")
+
+myLibrary.push(book1); 
+myLibrary.push(book2); 
+myLibrary.push(book3); 
+
+
+// ubiraet vsjo chtobi mochno bilo post vsje zanovo iz bibliotieki
+function deleteOnScreen(){
+    document.querySelector(".lib").innerHTML=""
+}
+
+
+// postit iz biblioteki po function createWindow. delaet vsje knigi iz library po tipy createWindow
+function postOnScreen () {
+    console.log(myLibrary.length)
+for (let i=0; i< myLibrary.length; i++) {
+    createWindow(myLibrary[i])
+}
+}
+//kachdaja kniga imeet takie properties
+function createWindow (item) {
+    let parent = document.createElement("div")
+    let content = document.createElement("div")
+    let library = document.querySelector(".lib")
+parent.className = "book-cell"
+        content.innerHTML=  item.author +" " + item.title +" "+ item.pages +" pages" 
+        parent.append(content)
+
+       let deleteButton = document.createElement("button");
+       deleteButton.textContent = "delete"
+       
+       parent.append(deleteButton)
+library.append(parent)
+       deleteButton.addEventListener("click", () =>  {
+  myLibrary.splice(myLibrary.indexOf(item),1);
+  deleteOnScreen ();
+    postOnScreen (); 
+    setData();
+});
+
+};
+
+
+function setData() {
+    localStorage.setItem(`myLibrary`, JSON.stringify(myLibrary));
+}
+
+//pulls books from local storage when page is refreshed
+function restore() {
+    if(!localStorage.myLibrary) {
+        postOnScreen ();
+    }else {
+        let objects = localStorage.getItem('myLibrary') // gets information from local storage to use in below loop to create DOM/display
+        objects = JSON.parse(objects);
+        myLibrary = objects;
+        postOnScreen ()
+    }
+}
+
+restore();
+
+
+
+
+
+</script>
+</body>
+</html>

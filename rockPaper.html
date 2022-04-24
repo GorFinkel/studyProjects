@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+    <body>
+        
+           
+            <label for="gameField">rock,paper or scissors?</label>
+
+            <select class='gameField' id="gameField" name="gameField">
+                <option value="Rock">Rock</option>
+                <option value="Paper">Paper</option>
+                <option value="Scissors">Scissors</option>            
+                <input class = "bu" type="submit" value="Submit">
+<script>
+const komp = ["rock", "paper", "scissors"];
+document.querySelector(".bu").addEventListener ("click",choise)
+let x=0
+
+    let i=0
+    let a=0
+function choise () {
+    
+let userChoise=document.querySelector(".gameField").value.toLowerCase() //  this will remove the letter case problem
+let pcChoise = komp[desicion()]
+function desicion (){
+    return Math.floor (Math.random() * 3 )
+}
+console.log (userChoise)
+console.log (pcChoise)
+
+
+if ((userChoise == "rock" && pcChoise=="scissors" )|| (userChoise == "paper" && pcChoise==="rock" )|| ( userChoise == "scissors" && pcChoise==="paper") ){
+            console.log ("User has won!")
+            i++
+            a++
+
+            console.log(`user has won ${i} times and the computer ${x} times.During ${a} games `)
+
+
+} 
+
+   else if ((pcChoise == "rock" && userChoise=="scissors" )|| (pcChoise == "paper" && userChoise==="rock" )|| ( pcChoise == "scissors" && userChoise==="paper") ){
+        console.log ("Computer has won!")
+        x++
+        a++
+        console.log(`computer has won ${x} times and the user has ${i} times. During ${a} games`)
+
+}
+
+   else if ((userChoise == "rock" && pcChoise=="rock" )|| (userChoise == "paper" && pcChoise==="paper" )|| ( userChoise == "scissors" && pcChoise==="scissors")){
+console.log ("Tie")
+a++
+console.log(` total ${a} games = computer has ${x} points and the user has ${i} points`)
+}
+
+}
+
+
+
+</script>
+    </body>
+</html>

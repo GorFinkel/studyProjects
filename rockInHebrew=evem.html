@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+    <body>
+        
+           
+            <label for="gameField">אבן,נייר או מספריים?</label>
+
+            <select class='gameField' id="gameField" name="gameField">
+              <option value="אבן">אבן</option>
+              <option value="נייר">נייר</option>
+              <option value="מספריים">מספריים</option>
+            </select>
+            <input class = "bu" type="submit" value="Submit">
+   
+<script>
+const komp = ["אבן", "נייר", "מספריים"];
+document.querySelector(".bu").addEventListener ("click",choise)
+function choise () {
+    let userChoise=document.querySelector(".gameField").value.toLowerCase() //  this will remove the letter case problem
+let pcChoise = komp[desicion()]
+
+console.log (userChoise)
+console.log (pcChoise)
+userWining ()
+pcWining ()
+tie ()
+
+function userWining (){
+if ((userChoise == "אבן" && pcChoise=="מספריים" )|| (userChoise == "נייר" && pcChoise==="אבן" )|| ( userChoise == "מספריים" && pcChoise==="נייר") ){
+            console.log ("אתה ניצחתה!")
+} 
+}
+function pcWining (){
+    if ((pcChoise == "אבן" && userChoise=="מספריים" )|| (pcChoise == "נייר" && userChoise==="אבן" )|| ( pcChoise == "מספריים" && userChoise==="נייר") ){
+        console.log ("מחשב ניצח")
+}
+}
+function tie (){
+    if ((userChoise == "אבן" && pcChoise=="אבן" )|| (userChoise == "נייר" && pcChoise==="נייר" )|| ( userChoise == "מספריים" && pcChoise==="מספריים")){
+console.log ("תיקו")
+}
+}
+
+function desicion (){
+    return Math.floor (Math.random() * 3 )
+
+
+
+}
+}
+
+
+</script>
+    </body>
+</html>

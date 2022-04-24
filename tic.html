@@ -1,0 +1,84 @@
+<html>
+    <body>
+
+<style>
+
+.a {
+    margin-top: 17vh;
+
+}
+    .container {
+      font-size: 9vh;
+      width: 0%;
+      display: flex;
+      flex-wrap: wrap;
+  flex-direction: column;
+  margin-left: 30vw;
+
+  
+    }
+      div{
+        border-color: rgb(72, 97, 134);
+    border-width: 1px;
+    border-style:solid; 
+    display: flex;
+     justify-content: center;
+  align-items: center;
+  height: 10vw;
+  width: 10vw;
+  background: rgb(171, 166, 211);
+
+    
+     
+
+    
+  </style>
+  
+  <div class="container a">
+    <div class="d 1"></div>
+    <div class="d 2"></div>
+    <div class="d 3"></div>
+</div>
+<div class="container b">
+    <div class="d 4"></div>
+    <div class="d 5"></div>
+    <div class="d 6"></div>
+</div>
+    <div class="container c">
+        <div class="d 7"></div>
+        <div class="d 8"></div>
+        <div class="d 9"></div>
+
+  </div>
+  <script>
+let d=document.querySelectorAll(".d");
+let clickTimes = 1;
+
+const game = ()=>{
+    d.forEach((boks) => {
+
+    boks.addEventListener('click', play);
+  
+    })
+}
+
+
+function play (a) {
+const box = a.target.textContent
+if (clickTimes % 2 !== 0 && box!=="O"&& box!=="X" ){
+    a.target.textContent ="X";
+clickTimes++
+console.log(clickTimes)
+
+} else if (clickTimes % 2 == 0 && box!=="X"&& box!=="O" )  {
+    a.target.textContent ="O";
+clickTimes++
+console.log(clickTimes)
+}
+}
+game ()
+  
+
+  </script>
+</body>
+</html>
