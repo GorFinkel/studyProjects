@@ -1,6 +1,6 @@
 console.log('hi');
 
-// let userInput=document.querySelector('.userInput').toLowerCase()
+// let userInput=document.querySelector('.userInput').value.toLowerCase()
 let potentialChoise=["rock","paper","scissors"]
 let getComputerChoice=potentialChoise[Math.floor(Math.random()*3)]
 console.log(`The PC has chosen: ${getComputerChoice}`);
