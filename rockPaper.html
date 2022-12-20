@@ -20,13 +20,12 @@ let x=0 // computers times won
 let i=0 //user times won
 let a=0 // tie counter
 function choise () {
-
 if ((userChoise == "rock" && pcChoise=="scissors" )|| (userChoise == "paper" && pcChoise==="rock" )|| ( userChoise == "scissors" && pcChoise==="paper") ){
             console.log ("User has won!")
             i++
             a++
             console.log(`user has won ${i} times and the computer ${x} times.During ${a} games `)
-} else if ((pcChoise == "rock" && userChoise=="scissors" )|| (pcChoise == "paper" && userChoise==="rock" )|| ( pcChoise == "scissors" && userChoise==="paper") ){
+}else if ((pcChoise == "rock" && userChoise=="scissors" )|| (pcChoise == "paper" && userChoise==="rock" )|| ( pcChoise == "scissors" && userChoise==="paper") ){
         console.log ("Computer has won!")
         x++
         a++
