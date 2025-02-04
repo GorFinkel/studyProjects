@@ -16,7 +16,7 @@ document.querySelector(".bu").addEventListener ("click",choise)
 
 let x=0 // computers times won
 let i=0 //user times won
-let a=0 // tie counter
+let a=0 // number of games plays counter
 function choise () {
  let userChoise=document.querySelector(".gameField").value.toLowerCase() //  this will remove the letter case problem
 let pcChoise = komp[Math.floor (Math.random() * 3 )]
@@ -35,7 +35,7 @@ if ((userChoise == "rock" && pcChoise=="scissors" )|| (userChoise == "paper" && 
 }else if (userChoise == pcChoise){
 console.log ("Tie")
 a++
-console.log(` total ${a} games = computer has ${x} points and the user has ${i} points`)
+console.log(` Now its a tie. total ${a} games played = computer has ${x} points and the user has ${i} points`)
 }
 }
 </script>
